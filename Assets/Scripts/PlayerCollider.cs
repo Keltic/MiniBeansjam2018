@@ -17,12 +17,7 @@ public class PlayerCollider : MonoBehaviour {
             other.gameObject.layer = AttachToPlayerLayer;
             other.gameObject.transform.SetParent(this.gameObject.transform);
 
-            Rigidbody2D body = other.gameObject.GetComponent<Rigidbody2D>();
-            body.velocity = Vector2.zero;
-            body.Sleep();
-            body.WakeUp();
-            Destroy(body);
-            //body.bodyType = RigidbodyType2D.Static;
+            Destroy(other.gameObject.GetComponent<Rigidbody2D>());
             
             PlayerCollider pc = other.gameObject.AddComponent<PlayerCollider>();
             pc.PlayerGameObject = PlayerGameObject;
