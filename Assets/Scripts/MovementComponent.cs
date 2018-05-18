@@ -1,44 +1,33 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementComponent : MonoBehaviour {
 
-    public float Speed = 1.2f;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        Vector3 movmentDirection = Vector3.zero;
-		if (Input.GetKey(KeyCode.W))
-        {
-            movmentDirection.y = 1;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            movmentDirection.y = -1;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            movmentDirection.x = -1;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            movmentDirection.x = 1;
-        }
-        
-        gameObject.transform.Translate(movmentDirection * Speed * Time.deltaTime);
+    [SerializeField]
+    private Rigidbody2D rb;
+    [SerializeField]
+    private float accelerationForce = 20.0f;
+    [SerializeField]
+    private float torqueForce = 10.0f;
 
-
-        bool doSim = false;
-        if (Input.GetKey(KeyCode.Space))
+    public void FixedUpdate()
+    {
+        float forward = Input.GetAxis("Vertical");
+        if(forward == 0)
         {
-            doSim = true;
+            forward = Input.GetAxis("Jump");
         }
 
-        gameObject.GetComponent<Rigidbody2D>().simulated = doSim;
-	}
+        if(forward != 0)
+        {
+            rb.AddForce(this.transform.right * this.accelerationForce * forward, ForceMode2D.Force);
+        }
+
+        float horizontal = Input.GetAxis("Horizontal");
+        if(horizontal != 0)
+        {
+            rb.AddTorque(-horizontal * this.torqueForce, ForceMode2D.Force);
+        }
+    }
 }
