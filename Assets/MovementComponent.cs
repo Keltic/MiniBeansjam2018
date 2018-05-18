@@ -31,6 +31,14 @@ public class MovementComponent : MonoBehaviour {
         }
         
         gameObject.transform.Translate(movmentDirection * Speed * Time.deltaTime);
-        
+
+
+        bool doSim = false;
+        if (Input.GetKey(KeyCode.Space))
+        {
+            doSim = true;
+        }
+
+        gameObject.GetComponent<Rigidbody2D>().simulated = doSim;
 	}
 }
