@@ -9,11 +9,14 @@ public class MainMenuGuiComponent : MonoBehaviour
     private GameObject mainMenu;
     [SerializeField]
     private WindowHowToPlayComponent howToPlay;
+    [SerializeField]
+    private GameObject credits;
 
     public void Start()
     {
         this.mainMenu.SetActive(true);
         this.howToPlay.Hide();
+        this.credits.SetActive(false);
     }
 
     public void OnClickButtonStart()
@@ -27,14 +30,21 @@ public class MainMenuGuiComponent : MonoBehaviour
         this.howToPlay.Show();
     }
 
+    public void OnClickButtonCredits()
+    {
+        this.mainMenu.SetActive(false);
+        this.credits.SetActive(true);
+    }
+
     public void OnClickButtonQuit()
     {
         Application.Quit();
     }
 
-    public void OnClickButtonHowToPlayBack()
+    public void OnClickButtonBackToMainMenu()
     {
         this.mainMenu.SetActive(true);
         this.howToPlay.Hide();
+        this.credits.SetActive(false);
     }
 }
