@@ -261,21 +261,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114790342052656866, guid: dc48873da2126694b8b47514b418b626,
-        type: 2}
-      propertyPath: TrashContainer
-      value: 
-      objectReference: {fileID: 1782084977}
     - target: {fileID: 114214851017174232, guid: dc48873da2126694b8b47514b418b626,
         type: 2}
       propertyPath: TrashContainer
       value: 
       objectReference: {fileID: 1896754855}
-    - target: {fileID: 250266005523239212, guid: dc48873da2126694b8b47514b418b626,
+    - target: {fileID: 114790342052656866, guid: dc48873da2126694b8b47514b418b626,
         type: 2}
-      propertyPath: m_ForceMagnitude
-      value: -250
-      objectReference: {fileID: 0}
+      propertyPath: TrashContainer
+      value: 
+      objectReference: {fileID: 1782084977}
+    - target: {fileID: 114790342052656866, guid: dc48873da2126694b8b47514b418b626,
+        type: 2}
+      propertyPath: AttachedTrashContainer
+      value: 
+      objectReference: {fileID: 1896754855}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc48873da2126694b8b47514b418b626, type: 2}
   m_IsPrefabParent: 0
