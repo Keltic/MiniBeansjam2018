@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpaceStationTrigger : MonoBehaviour
 {
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 10) //10 = AttachedToPlayer
         {
