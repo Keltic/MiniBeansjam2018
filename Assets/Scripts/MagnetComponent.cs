@@ -66,6 +66,6 @@ public class MagnetComponent : MonoBehaviour {
             }
         }
         PointEffector.enabled = IsActive;
-        ObjectCollider.enabled = !IsActive;
+        ObjectCollider.isTrigger = IsActive;
     }
 }
