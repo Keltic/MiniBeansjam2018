@@ -21,6 +21,8 @@ public class MovementComponent : MonoBehaviour {
 
     private Rigidbody2D myBody;
     private MagnetComponent magnet;
+    public GameObject TrashContainer;
+
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>();
@@ -29,8 +31,26 @@ public class MovementComponent : MonoBehaviour {
 
     public void FixedUpdate()
     {
-        myBody.drag = magnet.IsMagnetActive ? 1.5f : 0.5f;
-        myBody.angularDrag = magnet.IsMagnetActive ? 1.5f : 0.5f;
+        int numChilds = TrashContainer.transform.childCount;
+        float overallMass = 0f;
+        for (int ci = 0; ci < TrashContainer.transform.childCount; ++ci)
+        {
+           // Debug.LogWarning("Checking : " + TrashContainer.transform.GetChild(ci).gameObject);
+            Rigidbody body = TrashContainer.transform.GetChild(ci).gameObject.GetComponent<Rigidbody>();
+            if (body)
+            {
+                overallMass += body.mass;
+            }
+        }
+
+        float massFactor = overallMass / 1000f;
+        if (overallMass > 0)
+        {
+            //Debug.LogWarning("mass : " + overallMass);
+
+        }
+        myBody.drag = magnet.IsMagnetActive ? 0.5f +  (numChilds * massFactor) : 0.5f;
+        myBody.angularDrag = magnet.IsMagnetActive ?  0.5f + (numChilds * massFactor) : 0.5f;
 
         float forward = Input.GetAxis("Vertical");
         if(forward == 0)
