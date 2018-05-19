@@ -14,9 +14,4 @@ public class RandomBackgroundSelector : MonoBehaviour {
             this.GetComponent<MeshRenderer>().material = mat;
         }
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
