@@ -40,6 +40,8 @@ public class TrashSpawner : MonoBehaviour {
                 int trashIdx = Random.Range(0, TrashSpawnPresets.Length);
                 GameObject trash = Instantiate(TrashSpawnPresets[trashIdx], gameObject.transform);
                 trash.transform.position = new Vector3(spawnPos.x, spawnPos.y, gameObject.transform.position.z);
+
+                trash.transform.Rotate(Vector3.forward, Random.Range(0, 360.0f));
             }
         }
 	}
