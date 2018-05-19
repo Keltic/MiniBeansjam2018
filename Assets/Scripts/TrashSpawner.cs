@@ -35,7 +35,7 @@ public class TrashSpawner : MonoBehaviour {
 
             for (int i = 0; i < InitialSpawnCount; ++i)
             {
-                SpawnRandomTrash();
+                SpawnRandomTrash(Vector2.zero, MinSpawnDistanceFromPlanet, MaxSpawnDistanceFromPlanet);
             }
         }
 
