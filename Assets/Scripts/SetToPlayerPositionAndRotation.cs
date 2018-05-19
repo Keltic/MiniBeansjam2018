@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetToPlayerPosition : MonoBehaviour {
+public class SetToPlayerPositionAndRotation : MonoBehaviour {
 
     public GameObject Player;
 	

@@ -8,17 +8,18 @@ public class MagnetComponent : MonoBehaviour {
     const string TrashTag = "Trash";
     const int SpaceTrashLayer = 9;
 
-    public bool IsActive = false;
+    public bool IsMagnetActive = false;
 
     public PointEffector2D PointEffector;
     public GameObject TrashContainer;
+    public GameObject AttachedTrashContainer;
     public Collider2D ObjectCollider;
 
     private Rigidbody2D myBody;
     
 	// Use this for initialization
 	void Start () {
-        IsActive = false;
+        IsMagnetActive = false;
         myBody = GetComponent<Rigidbody2D>();
 
     }
@@ -26,14 +27,14 @@ public class MagnetComponent : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        IsActive = Input.GetButton(MagnetActionName);
+        IsMagnetActive = Input.GetButton(MagnetActionName);
 
-        if (!IsActive && PointEffector.enabled)
+        if (!IsMagnetActive && PointEffector.enabled)
         {
             List<GameObject> objectsToReparent = new List<GameObject>();
-            for (int ci = 0; ci <  this.gameObject.transform.childCount; ++ci)
+            for (int ci = 0; ci < AttachedTrashContainer.transform.childCount; ++ci)
             {
-                GameObject go = this.gameObject.transform.GetChild(ci).gameObject;
+                GameObject go = AttachedTrashContainer.transform.GetChild(ci).gameObject;
                 if(go.tag != TrashTag)
                 {
                     continue;
@@ -67,11 +68,9 @@ public class MagnetComponent : MonoBehaviour {
                 go.transform.SetParent(TrashContainer.transform);
             }
         }
-        PointEffector.enabled = IsActive;
-
-        ObjectCollider.isTrigger = IsActive;
+        PointEffector.enabled = IsMagnetActive;
+        ObjectCollider.isTrigger = IsMagnetActive;
 
         //Debug.LogWarning("AV:  " + myBody.velocity);
-        //myBody.angularVelocity = Mathf.Clamp(myBody.angularVelocity, -50f, 50f);
     }
 }

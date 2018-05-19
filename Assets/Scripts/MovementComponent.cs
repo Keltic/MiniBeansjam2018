@@ -19,8 +19,19 @@ public class MovementComponent : MonoBehaviour {
     [SerializeField]
     private float torqueForce = 10.0f;
 
+    private Rigidbody2D myBody;
+    private MagnetComponent magnet;
+    void Start()
+    {
+        myBody = GetComponent<Rigidbody2D>();
+        magnet = GetComponent<MagnetComponent>();
+    }
+
     public void FixedUpdate()
     {
+        myBody.drag = magnet.IsMagnetActive ? 1.5f : 0.5f;
+        myBody.angularDrag = magnet.IsMagnetActive ? 1.5f : 0.5f;
+
         float forward = Input.GetAxis("Vertical");
         if(forward == 0)
         {
@@ -59,5 +70,8 @@ public class MovementComponent : MonoBehaviour {
             this.thrusterLeft.SetActive(false);
             this.thrusterRight.SetActive(false);
         }
+
+
+        myBody.angularVelocity = Mathf.Clamp(myBody.angularVelocity, -50f, 50f);
     }
 }
