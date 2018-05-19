@@ -14,6 +14,7 @@ public class MagnetComponent : MonoBehaviour {
     public GameObject TrashContainer;
     public GameObject AttachedTrashContainer;
     public Collider2D ObjectCollider;
+    public GameObject MagnetEffect;
 
     private Rigidbody2D myBody;
     
@@ -28,6 +29,7 @@ public class MagnetComponent : MonoBehaviour {
 	void Update () {
 
         IsMagnetActive = Input.GetButton(MagnetActionName);
+        MagnetEffect.SetActive(IsMagnetActive);
 
         if (!IsMagnetActive && PointEffector.enabled)
         {
