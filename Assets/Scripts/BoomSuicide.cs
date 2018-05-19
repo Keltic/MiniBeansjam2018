@@ -11,7 +11,8 @@ public class BoomSuicide : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (ani.GetCurrentAnimatorStateInfo (0).IsName("Exit") ) {
+		if (ani.GetCurrentAnimatorStateInfo (0).IsName("buffer") ) {
+			
 			Destroy (gameObject);
 
 		}
