@@ -38,6 +38,7 @@ public class MagnetComponent : MonoBehaviour {
                     Rigidbody2D body = go.AddComponent<Rigidbody2D>();
                     body.gravityScale = 0f;
                     body.mass = 20f;
+                    body.AddForce(Random.insideUnitCircle * 2.0f, ForceMode2D.Impulse);
                 }
                 PlayerCollider pc = go.GetComponent<PlayerCollider>();
                 if (pc != null)
