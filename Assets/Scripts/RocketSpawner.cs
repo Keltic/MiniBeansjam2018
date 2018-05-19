@@ -5,10 +5,9 @@ using UnityEngine;
 public class RocketSpawner : MonoBehaviour {
 
     public GameObject planet;
-	public Vector3 vel = new Vector3 (10, 0, 0);
-
-
-    // Use this for initialization
+	public float vel;
+	private float time = 0;
+	    // Use this for initialization
     void Start()
     {
         Vector2 planetPosition = new Vector2();
@@ -16,19 +15,32 @@ public class RocketSpawner : MonoBehaviour {
        
         //  this.gameObject.transform.position = new Vector2(planetPosition.x + planetRadius/2, planetPosition.y);
 		this.gameObject.transform.position = new Vector2(planetPosition.x + Random.Range(-10f, 10f), planetPosition.y + Random.Range(-10f,10f));
-
-
-
+		vel = Random.Range (10, 50);
+		transform.RotateAround(new Vector3(0,0,1), Random.Range(0,360));
     }
 
+	void LateUpdate(){
+		time += Time.deltaTime;
+		if (time >= 5) {
+			Destroy (gameObject);
+			time = 0;
+		}
 
-
-    // Update is called once per frame
+	}
+  // Update is called once per frame
     void FixedUpdate()
     {
-        this.gameObject.GetComponent<Rigidbody2D>().AddForce(vel, ForceMode2D.Impulse);
+
+		this.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right*vel, ForceMode2D.Impulse);
 
 
 
     }
+
+	void OnCollisionEnter2D(){
+		Debug.Log("LOL");
+	
+	}
+
+
 }
