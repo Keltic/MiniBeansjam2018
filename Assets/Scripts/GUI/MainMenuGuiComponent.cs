@@ -12,8 +12,12 @@ public class MainMenuGuiComponent : MonoBehaviour
     [SerializeField]
     private GameObject credits;
 
+    [SerializeField]
+    private AudioSource audiocSourceBgm;
+
     public void Start()
     {
+        this.audiocSourceBgm.Play();
         this.mainMenu.SetActive(true);
         this.howToPlay.Hide();
         this.credits.SetActive(false);
