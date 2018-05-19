@@ -282,10 +282,10 @@ Prefab:
       propertyPath: TrashContainer
       value: 
       objectReference: {fileID: 1896754855}
-    - target: {fileID: 114547881874384754, guid: dc48873da2126694b8b47514b418b626,
+    - target: {fileID: 250266005523239212, guid: dc48873da2126694b8b47514b418b626,
         type: 2}
-      propertyPath: trashMassFactor
-      value: 0.0005
+      propertyPath: m_ForceMagnitude
+      value: -450
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc48873da2126694b8b47514b418b626, type: 2}
