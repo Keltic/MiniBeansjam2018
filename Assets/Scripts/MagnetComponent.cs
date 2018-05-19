@@ -65,12 +65,10 @@ public class MagnetComponent : MonoBehaviour {
 
             foreach(GameObject go in objectsToReparent)
             {
-                //go.transform.SetParent(TrashContainer.transform);
+                go.transform.SetParent(TrashContainer.transform);
             }
         }
         PointEffector.enabled = IsMagnetActive;
         ObjectCollider.isTrigger = IsMagnetActive;
-
-        //Debug.LogWarning("AV:  " + myBody.velocity);
     }
 }

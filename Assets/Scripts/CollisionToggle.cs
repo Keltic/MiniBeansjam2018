@@ -19,11 +19,11 @@ public class CollisionToggle : MonoBehaviour {
     {
         if (this.tag == TrashLayer)
         {
-            collision.enabled = true;
+           collision.enabled = true;
         }
         else
         {
-            collision.enabled = false;
+          collision.enabled = false;
         }
 	}
 }

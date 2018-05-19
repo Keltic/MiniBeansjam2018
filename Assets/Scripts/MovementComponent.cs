@@ -18,6 +18,8 @@ public class MovementComponent : MonoBehaviour {
     private float accelerationForce = 20.0f;
     [SerializeField]
     private float torqueForce = 10.0f;
+    [SerializeField]
+    private float trashMassFactor = 0.001f;
 
     private Rigidbody2D myBody;
     private MagnetComponent magnet;
@@ -31,24 +33,20 @@ public class MovementComponent : MonoBehaviour {
 
     public void FixedUpdate()
     {
-        int numChilds = TrashContainer.transform.childCount;
+        Transform containerTransform = TrashContainer.transform;
+        int numChilds = containerTransform.childCount;
         float overallMass = 0f;
-        for (int ci = 0; ci < TrashContainer.transform.childCount; ++ci)
+        for (int ci = 0; ci < containerTransform.childCount; ++ci)
         {
-           // Debug.LogWarning("Checking : " + TrashContainer.transform.GetChild(ci).gameObject);
-            Rigidbody body = TrashContainer.transform.GetChild(ci).gameObject.GetComponent<Rigidbody>();
+            Rigidbody2D body = containerTransform.GetChild(ci).gameObject.GetComponent<Rigidbody2D>();
             if (body)
             {
                 overallMass += body.mass;
             }
         }
 
-        float massFactor = overallMass / 1000f;
-        if (overallMass > 0)
-        {
-            //Debug.LogWarning("mass : " + overallMass);
+        float massFactor = overallMass * trashMassFactor;
 
-        }
         myBody.drag = magnet.IsMagnetActive ? 0.5f +  (numChilds * massFactor) : 0.5f;
         myBody.angularDrag = magnet.IsMagnetActive ?  0.5f + (numChilds * massFactor) : 0.5f;
 
