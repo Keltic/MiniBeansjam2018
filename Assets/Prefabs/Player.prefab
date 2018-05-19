@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 250266005523239212}
   - component: {fileID: 58013981833153556}
   - component: {fileID: 114790342052656866}
+  - component: {fileID: 232392941566835052}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -538,9 +539,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2958cc1dd06d22f41b0933bf608ccb00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsActive: 0
+  IsMagnetActive: 0
   PointEffector: {fileID: 250266005523239212}
   TrashContainer: {fileID: 0}
+  AttachedTrashContainer: {fileID: 0}
   ObjectCollider: {fileID: 70234281555809620}
 --- !u!212 &212107674910739788
 SpriteRenderer:
@@ -767,6 +769,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!232 &232392941566835052
+DistanceJoint2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698623840819390}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 75
+  m_MaxDistanceOnly: 1
 --- !u!250 &250266005523239212
 PointEffector2D:
   m_ObjectHideFlags: 1

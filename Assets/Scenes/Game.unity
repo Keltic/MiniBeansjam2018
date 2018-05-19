@@ -571,6 +571,26 @@ GameObject:
   m_PrefabParentObject: {fileID: 1457579658194832, guid: a1c2517a708b24d489fbad34f0c632bb,
     type: 2}
   m_PrefabInternal: {fileID: 1456330359}
+--- !u!50 &1040120549
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1040120543}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2000
+  m_LinearDrag: 1000
+  m_AngularDrag: 1000
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1079995863
 Prefab:
   m_ObjectHideFlags: 0
@@ -1295,6 +1315,24 @@ Transform:
   m_PrefabParentObject: {fileID: 4126598336750800, guid: dc48873da2126694b8b47514b418b626,
     type: 2}
   m_PrefabInternal: {fileID: 361784076}
+--- !u!232 &2043330838
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2043330831}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1040120549}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 75
+  m_MaxDistanceOnly: 1
 --- !u!1001 &2104534256
 Prefab:
   m_ObjectHideFlags: 0
