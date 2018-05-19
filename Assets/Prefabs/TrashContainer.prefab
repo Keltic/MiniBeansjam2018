@@ -74,6 +74,6 @@ MonoBehaviour:
   - {fileID: 1167073891210804, guid: f23f6217eaba77f49abe23570e68db84, type: 2}
   CenterPlant: {fileID: 0}
   Camera: {fileID: 0}
-  InitialSpawnCount: 150
+  InitialSpawnCount: 100
   MinSpawnDistanceFromPlanet: 3
   MaxSpawnDistanceFromPlanet: 400
