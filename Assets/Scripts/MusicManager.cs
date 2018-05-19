@@ -10,9 +10,9 @@ public class MusicManager : MonoBehaviour {
     int currentTrack;
     float defaultVolume;
 
-    public float PauseBetweenTracks = 5.0f;
-    private float pauseTimer = 0f;
-    private int numPlays = 1;
+    //public float PauseBetweenTracks = 5.0f;
+    //private float pauseTimer = 0f;
+    //private int numPlays = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -20,8 +20,8 @@ public class MusicManager : MonoBehaviour {
         currentTrack = Random.Range(0, MusicClips.Length);
         source.clip = MusicClips[currentTrack];
         source.Play();
-        pauseTimer = PauseBetweenTracks;
-        defaultVolume = source.volume;
+        //pauseTimer = PauseBetweenTracks;
+        //defaultVolume = source.volume;
     }
 	
 	// Update is called once per frame
