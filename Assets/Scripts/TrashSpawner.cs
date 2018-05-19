@@ -50,7 +50,7 @@ public class TrashSpawner : MonoBehaviour {
 
             for (int i = 0; i < SpawnStackSize; ++i)
             {
-                SpawnRandomTrash(Vector2.zero);
+                SpawnRandomTrash(Vector2.zero, MinSpawnDistanceFromPlanet, MaxSpawnDistanceFromPlanet);
             }
         }
 	}
@@ -60,16 +60,16 @@ public class TrashSpawner : MonoBehaviour {
         int stackSize = numTrash == -1 ? SpawnStackSize : numTrash;
         for (int i = 0; i < stackSize; ++i)
         {
-            SpawnRandomTrash(location);
+            SpawnRandomTrash(location, 0, 10f);
         }
     }
 
-    void SpawnRandomTrash(Vector2 center)
+    void SpawnRandomTrash(Vector2 center, float minRange, float maxRange)
     {
         Vector2 randomPos = Random.insideUnitCircle;
 
-        float minSpawn = Mathf.Sqrt(CenterPlant.transform.localScale.x) + MinSpawnDistanceFromPlanet;
-        float maxSpawn = minSpawn + MaxSpawnDistanceFromPlanet;
+        float minSpawn = Mathf.Sqrt(CenterPlant.transform.localScale.x) + minRange;
+        float maxSpawn = minSpawn + maxRange;
         Vector2 spawnPos;
         spawnPos = GetRandomPointInCircle(center, minSpawn, maxSpawn);
 
