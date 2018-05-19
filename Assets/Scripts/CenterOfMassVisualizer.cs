@@ -10,8 +10,8 @@ public class RigidbodyEditor : Editor
         if (rb)
         {
             // Uncomment this to show a sphere at the com
-            //Handles.color = Color.red;
-            //Handles.SphereHandleCap(1, rb.transform.TransformPoint(rb.centerOfMass), Quaternion.identity, 1, EventType.Repaint);
+            Handles.color = Color.red;
+            Handles.SphereHandleCap(1, rb.transform.TransformPoint(rb.centerOfMass), Quaternion.identity, 1, EventType.Repaint);
         }
     }
     public override void OnInspectorGUI()

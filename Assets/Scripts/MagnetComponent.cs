@@ -15,12 +15,13 @@ public class MagnetComponent : MonoBehaviour {
     public Collider2D ObjectCollider;
 
     private Rigidbody2D myBody;
-
+    
 	// Use this for initialization
 	void Start () {
         IsActive = false;
         myBody = GetComponent<Rigidbody2D>();
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -57,6 +58,7 @@ public class MagnetComponent : MonoBehaviour {
                     Destroy(pc);
                 }
                 go.layer = SpaceTrashLayer;
+
                 objectsToReparent.Add(go);
             }
 
@@ -66,7 +68,10 @@ public class MagnetComponent : MonoBehaviour {
             }
         }
         PointEffector.enabled = IsActive;
-        
+
         ObjectCollider.isTrigger = IsActive;
+
+        //Debug.LogWarning("AV:  " + myBody.velocity);
+        myBody.angularVelocity = Mathf.Clamp(myBody.angularVelocity, -50f, 50f);
     }
 }
