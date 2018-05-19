@@ -776,6 +776,53 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1155264115}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1234909605
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4292460583697344, guid: 6ec973fec4466f24f97b6f15202b53aa, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292460583697344, guid: 6ec973fec4466f24f97b6f15202b53aa, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292460583697344, guid: 6ec973fec4466f24f97b6f15202b53aa, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292460583697344, guid: 6ec973fec4466f24f97b6f15202b53aa, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292460583697344, guid: 6ec973fec4466f24f97b6f15202b53aa, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292460583697344, guid: 6ec973fec4466f24f97b6f15202b53aa, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292460583697344, guid: 6ec973fec4466f24f97b6f15202b53aa, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292460583697344, guid: 6ec973fec4466f24f97b6f15202b53aa, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114861136045187704, guid: 6ec973fec4466f24f97b6f15202b53aa,
+        type: 2}
+      propertyPath: planet
+      value: 
+      objectReference: {fileID: 1040120543}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6ec973fec4466f24f97b6f15202b53aa, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1456330359
 Prefab:
   m_ObjectHideFlags: 0
