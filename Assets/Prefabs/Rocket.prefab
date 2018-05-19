@@ -120,7 +120,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planet: {fileID: 1457579658194832, guid: a1c2517a708b24d489fbad34f0c632bb, type: 2}
   vel: 0
+  trash: {fileID: 114159446234688084, guid: 02c6b6e589612e2489e7a75404e046dd, type: 2}
   boomAnimationPrefab: {fileID: 1606089894519386, guid: f5aae9b8c17ecb14ba5dde480925c78c,
+    type: 2}
+  boomSoundPrefab: {fileID: 1665281590025558, guid: 1198ff00252dfcc4eb22073315a3053f,
     type: 2}
 --- !u!212 &212725786076730624
 SpriteRenderer:

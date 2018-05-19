@@ -9,17 +9,13 @@ public class RocketSpawner : MonoBehaviour {
 	private float time = 0;
 
 	public GameObject boomAnimationPrefab;
-	
+	public GameObject boomSoundPrefab;
+
+
 	    // Use this for initialization
     void Start()
     {
-        Vector2 planetPosition = new Vector2();
-        planetPosition = planet.transform.position;
-       
-        //  this.gameObject.transform.position = new Vector2(planetPosition.x + planetRadius/2, planetPosition.y);
-		this.gameObject.transform.position = new Vector2(planetPosition.x + Random.Range(-10f, 10f), planetPosition.y + Random.Range(-10f,10f));
-		vel = Random.Range (10, 50);
-		transform.RotateAround(new Vector3(0,0,1), Random.Range(0,360));
+       	vel = Random.Range (10, 50);
 
 
     }
@@ -44,6 +40,7 @@ public class RocketSpawner : MonoBehaviour {
 		GameObject boom = Instantiate (boomAnimationPrefab) as GameObject;
 		boom.transform.position = this.transform.position;
 		GameLogic.Instance.ReportRocketCrashed (this.gameObject);
+		GameObject boomSound = Instantiate (boomSoundPrefab) as GameObject;
 		Destroy (gameObject);
 
 	
