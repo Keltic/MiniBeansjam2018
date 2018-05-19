@@ -16,13 +16,15 @@ public class MagnetComponent : MonoBehaviour {
     public Collider2D ObjectCollider;
     public GameObject MagnetEffect;
 
+    public AudioSource SoundEffect;
+
     private Rigidbody2D myBody;
     
 	// Use this for initialization
 	void Start () {
         IsMagnetActive = false;
         myBody = GetComponent<Rigidbody2D>();
-
+        SoundEffect.Stop();
     }
 	
 	// Update is called once per frame
@@ -30,6 +32,15 @@ public class MagnetComponent : MonoBehaviour {
 
         IsMagnetActive = Input.GetButton(MagnetActionName);
         MagnetEffect.SetActive(IsMagnetActive);
+        if (IsMagnetActive)
+        {
+            if (!SoundEffect.isPlaying)
+                SoundEffect.Play();
+        }
+        else
+        {
+            SoundEffect.Stop();
+        }
 
         if (!IsMagnetActive && PointEffector.enabled)
         {
