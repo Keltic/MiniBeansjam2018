@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class GameLogicComponent : MonoBehaviour
 {
     [SerializeField]
+    private int numberOfSpawnAtCrash = 5;
+    [SerializeField]
     private Text textPoints;
     [SerializeField]
     private GameObject gameOverScreen;
@@ -15,9 +17,11 @@ public class GameLogicComponent : MonoBehaviour
 
     private float timer;
     private float points;
+    private TrashSpawner trashSpawner;
 
     public void Start()
     {
+        this.trashSpawner = GameObject.Find("TrashContainer").GetComponent<TrashSpawner>();
         Time.timeScale = 1;
         this.timer = 0;
         this.gameOverScreen.SetActive(false);
@@ -38,6 +42,8 @@ public class GameLogicComponent : MonoBehaviour
 
     public void ReportRocketCrashed(GameObject rocket)
     {
+        this.trashSpawner.SpawnRandomTrashAtLocation(rocket.transform.position, this.numberOfSpawnAtCrash);
+
         Rigidbody2D rb = rocket.GetComponent<Rigidbody2D>();
         if(rb != null)
         {
