@@ -76,6 +76,6 @@ MonoBehaviour:
   Camera: {fileID: 0}
   SpawnTimer: 5
   SpawnStackSize: 3
-  InitialSpawnCount: 50
+  InitialSpawnCount: 25
   MinSpawnDistanceFromPlanet: 300
   MaxSpawnDistanceFromPlanet: 1000
