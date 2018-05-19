@@ -901,6 +901,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114401957905675258, guid: a1c2517a708b24d489fbad34f0c632bb,
+        type: 2}
+      propertyPath: ExplosionSFX
+      value: 
+      objectReference: {fileID: 1745253194311274, guid: 7bc16dfc4971a9f4c8f4381fa886bea5,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1c2517a708b24d489fbad34f0c632bb, type: 2}
   m_IsPrefabParent: 0
@@ -1315,6 +1321,16 @@ Prefab:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 1549146103}
+    - target: {fileID: 114159446234688084, guid: 02c6b6e589612e2489e7a75404e046dd,
+        type: 2}
+      propertyPath: MinSpawnDistanceFromPlanet
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114159446234688084, guid: 02c6b6e589612e2489e7a75404e046dd,
+        type: 2}
+      propertyPath: MaxSpawnDistanceFromPlanet
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02c6b6e589612e2489e7a75404e046dd, type: 2}
   m_IsPrefabParent: 0
