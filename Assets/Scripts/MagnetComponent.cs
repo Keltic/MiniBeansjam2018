@@ -72,6 +72,6 @@ public class MagnetComponent : MonoBehaviour {
         ObjectCollider.isTrigger = IsActive;
 
         //Debug.LogWarning("AV:  " + myBody.velocity);
-        //myBody.angularVelocity = Mathf.Clamp(myBody.angularVelocity, -50f, 50f);
+        myBody.angularVelocity = Mathf.Clamp(myBody.angularVelocity, -50f, 50f);
     }
 }

@@ -271,6 +271,11 @@ Prefab:
       propertyPath: TrashContainer
       value: 
       objectReference: {fileID: 1896754855}
+    - target: {fileID: 250266005523239212, guid: dc48873da2126694b8b47514b418b626,
+        type: 2}
+      propertyPath: m_ForceMagnitude
+      value: -250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc48873da2126694b8b47514b418b626, type: 2}
   m_IsPrefabParent: 0
@@ -1084,9 +1089,9 @@ MonoBehaviour:
   - {fileID: 1167073891210804, guid: 0df4e265b60a1af4db869ae3e6578088, type: 2}
   CenterPlant: {fileID: 1040120543}
   Camera: {fileID: 1549146103}
-  InitialSpawnCount: 100
+  InitialSpawnCount: 150
   MinSpawnDistanceFromPlanet: 3
-  MaxSpawnDistanceFromPlanet: 6
+  MaxSpawnDistanceFromPlanet: 400
 --- !u!1 &1896754855
 GameObject:
   m_ObjectHideFlags: 0
