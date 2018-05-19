@@ -1343,24 +1343,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4126598336750800, guid: dc48873da2126694b8b47514b418b626,
     type: 2}
   m_PrefabInternal: {fileID: 361784076}
---- !u!232 &2043330838
-DistanceJoint2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2043330831}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 24.378918
-  m_MaxDistanceOnly: 0
 --- !u!1001 &2104534256
 Prefab:
   m_ObjectHideFlags: 0
