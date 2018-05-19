@@ -10,12 +10,22 @@ public class GameLogicComponent : MonoBehaviour
     [SerializeField]
     private GameObject gameOverScreen;
 
+    private float points;
+
     public void Start()
     {
         this.gameOverScreen.SetActive(false);
+        this.points = 2000;
+        this.textPoints.text = this.points.ToString();
     }
 
-    public void ReportScrapDelivered(int amount)
+    public void ReportScrapDelivered(float amount)
+    {
+        this.points += amount;
+        this.textPoints.text = this.points.ToString();
+    }
+
+    public void ReportRocketCrashed(GameObject rocket)
     {
 
     }
