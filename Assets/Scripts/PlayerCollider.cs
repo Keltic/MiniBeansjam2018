@@ -30,7 +30,7 @@ public class PlayerCollider : MonoBehaviour {
             return;
         }
 
-        if (other.gameObject.layer == SpaceTrashLayer && !myCollider.usedByEffector)
+        if (other.isTrigger && other.gameObject.layer == SpaceTrashLayer && !myCollider.usedByEffector)
         {         
             other.gameObject.layer = AttachToPlayerLayer;
             other.gameObject.transform.SetParent(TrashContainer.transform);
