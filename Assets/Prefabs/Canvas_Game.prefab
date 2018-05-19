@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 114311667348951602}
   - component: {fileID: 114842871631651102}
   - component: {fileID: 114686710069723872}
+  - component: {fileID: 114390214677345268}
   m_Layer: 5
   m_Name: Canvas_Game
   m_TagString: Untagged
@@ -364,6 +365,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114390214677345268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1868676365796344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51585e92295d3e34a87aa32475d95008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 5
+  rocketPrefab: {fileID: 1368841161644592, guid: 20f8cbfd4e12a174caea8d2e21f4d0b7,
+    type: 2}
 --- !u!114 &114397969783108930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -471,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -504,7 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
