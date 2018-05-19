@@ -10,7 +10,7 @@ public class RocketController : MonoBehaviour {
 	private float alertTime;
 	public GameObject rocketPrefab;
 	private GameObject rocket;
-	private GameObject rocketAlarmPrefab;
+	public GameObject rocketAlarmPrefab;
 	private GameObject rocketAlarm;
 	public GameObject planet;
 
@@ -33,7 +33,7 @@ public class RocketController : MonoBehaviour {
 		if (alertTime  == spawnTimer/3) {
 
 			calcRocketPosition ();
-			rocketAlarm = Instantiate (rocketAlarmPrefab, rocketSpawn) as GameObject;
+			rocketAlarm = Instantiate (rocketAlarmPrefab, rocketSpawn, Quaternion.identity) as GameObject;
 
 			}
 
