@@ -9,16 +9,33 @@ public class PlayerCollider : MonoBehaviour {
     const int SpaceTrashLayer = 9;
     const int AttachToPlayerLayer = 10;
 
+    private Collider2D myCollider;
+    private PointEffector2D playerPointEffector;
+
     void OnTriggerEnter2D(Collider2D other)
-    {
-        Collider2D thisCollider = this.GetComponent<Collider2D>();
-        if (other.gameObject.layer == SpaceTrashLayer && !thisCollider.usedByEffector)
+    {        
+        if (!myCollider)
+        {
+            myCollider = this.GetComponent<Collider2D>();
+        }
+
+        if (!playerPointEffector)
+        {
+            playerPointEffector = PlayerGameObject.GetComponent<PointEffector2D>();
+        }
+
+        if (!playerPointEffector || !playerPointEffector.enabled)
+        {
+            return;
+        }
+
+        if (other.gameObject.layer == SpaceTrashLayer && !myCollider.usedByEffector)
         {         
             other.gameObject.layer = AttachToPlayerLayer;
-            other.gameObject.transform.SetParent(this.gameObject.transform);
+            other.gameObject.transform.SetParent(PlayerGameObject.transform);
 
             Destroy(other.gameObject.GetComponent<Rigidbody2D>());
-            
+
             PlayerCollider pc = other.gameObject.AddComponent<PlayerCollider>();
             pc.PlayerGameObject = PlayerGameObject;
         }        
