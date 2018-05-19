@@ -8,8 +8,12 @@ public class SpaceStationTrigger : MonoBehaviour
     {
         if (collision.gameObject.layer == 10) //10 = AttachedToPlayer
         {
-            GameLogic.Instance.ReportScrapDelivered(collision.gameObject.GetComponent<Rigidbody2D>().mass);
-            GameObject.Destroy(collision.gameObject);
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if(rb != null)
+            {
+                GameLogic.Instance.ReportScrapDelivered(rb.mass);
+                GameObject.Destroy(collision.gameObject);
+            }
         }
     }
 }
