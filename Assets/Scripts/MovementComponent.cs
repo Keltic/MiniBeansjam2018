@@ -48,7 +48,7 @@ public class MovementComponent : MonoBehaviour {
         float massFactor = overallMass * trashMassFactor;
 
         myBody.drag = magnet.IsMagnetActive ? 0.5f +  (numChilds * massFactor) : 0.5f;
-        myBody.angularDrag = magnet.IsMagnetActive ?  0.5f + (numChilds * massFactor) : 0.5f;
+        myBody.angularDrag = magnet.IsMagnetActive ?  0.5f + (numChilds * massFactor * 150.0f) : 0.5f;
 
         float forward = Input.GetAxis("Vertical");
         if(forward == 0)
