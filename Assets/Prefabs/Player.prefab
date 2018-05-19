@@ -528,6 +528,7 @@ MonoBehaviour:
   rb: {fileID: 50628584148200360}
   accelerationForce: 400
   torqueForce: 200
+  TrashContainer: {fileID: 0}
 --- !u!114 &114790342052656866
 MonoBehaviour:
   m_ObjectHideFlags: 1
