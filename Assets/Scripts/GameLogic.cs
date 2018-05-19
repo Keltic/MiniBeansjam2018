@@ -12,7 +12,7 @@ public static class GameLogic
     {
         if(instance == null)
         {
-            instance = GameObject.Find("GameLogic").GetComponent<GameLogicComponent>();
+            instance = GameObject.Find("Canvas_Game").GetComponent<GameLogicComponent>();
         }
 
         return instance;
