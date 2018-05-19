@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCollider : MonoBehaviour {
 
     public GameObject PlayerGameObject;
+    public GameObject TrashContainer;
 
     const int SpaceTrashLayer = 9;
     const int AttachToPlayerLayer = 10;
@@ -32,12 +33,13 @@ public class PlayerCollider : MonoBehaviour {
         if (other.gameObject.layer == SpaceTrashLayer && !myCollider.usedByEffector)
         {         
             other.gameObject.layer = AttachToPlayerLayer;
-            other.gameObject.transform.SetParent(PlayerGameObject.transform);
+            other.gameObject.transform.SetParent(TrashContainer.transform);
 
             Destroy(other.gameObject.GetComponent<Rigidbody2D>());
 
             PlayerCollider pc = other.gameObject.AddComponent<PlayerCollider>();
             pc.PlayerGameObject = PlayerGameObject;
+            pc.TrashContainer = TrashContainer;
         }        
     }
 }
