@@ -10,6 +10,7 @@ public class LevelBorderCheck : MonoBehaviour {
         {
             float z = collision.gameObject.transform.position.z;
             Vector3 location = collision.gameObject.transform.position * -1f;
+            location.z = z;
 
             collision.gameObject.transform.SetPositionAndRotation(location,
                 Quaternion.Euler(0,0,90));

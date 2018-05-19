@@ -272,6 +272,12 @@ Prefab:
       propertyPath: TrashContainer
       value: 
       objectReference: {fileID: 1896754855}
+    - target: {fileID: 212639610615894844, guid: dc48873da2126694b8b47514b418b626,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e33eed9462c04e4eaac4deb38d46bef,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc48873da2126694b8b47514b418b626, type: 2}
   m_IsPrefabParent: 0
