@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1802495156442772}
+  m_IsPrefabParent: 1
+--- !u!1 &1802495156442772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4215354706447542}
+  - component: {fileID: 114159446234688084}
+  m_Layer: 0
+  m_Name: TrashContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4215354706447542
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1802495156442772}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114159446234688084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1802495156442772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5f88d75d5bf244ebecad5e5daa92d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrashSpawnPresets:
+  - {fileID: 1167073891210804, guid: 0ba1a345a0473364ab625632e6b06ec2, type: 2}
+  - {fileID: 1167073891210804, guid: 5ddbbdba6988d3d4e899ef822d59194a, type: 2}
+  - {fileID: 1167073891210804, guid: 38b4a0327b23e9d4ba700e6dd985c1fb, type: 2}
+  - {fileID: 1167073891210804, guid: 1ad984bc39434394a86b21d0cffd6a52, type: 2}
+  - {fileID: 1167073891210804, guid: 1fbc88ce38c6bd342b7ad0b31813b485, type: 2}
+  - {fileID: 1167073891210804, guid: 4a5b406454e88f148bd256c1a77a7d25, type: 2}
+  - {fileID: 1167073891210804, guid: 0d707c178a592cc4aac31b1aa91ced90, type: 2}
+  - {fileID: 1167073891210804, guid: 8ca5977e823709f49ad7ba10915a327d, type: 2}
+  - {fileID: 1167073891210804, guid: 4fb80cf63b29e2f48b6c939f52d5cd8f, type: 2}
+  - {fileID: 1167073891210804, guid: 741b0358ce6bc37459f794b28d7e0ef1, type: 2}
+  - {fileID: 1167073891210804, guid: cbb9df24fe929b34dbc33189023938c7, type: 2}
+  - {fileID: 1167073891210804, guid: d054e9f9b4d48d54aa0428c4df0456a9, type: 2}
+  - {fileID: 1167073891210804, guid: 1bbd7daafdb367549bf6ccea0c76f595, type: 2}
+  - {fileID: 1167073891210804, guid: bc7772ef21799f54991194bb7ac410fa, type: 2}
+  - {fileID: 1167073891210804, guid: c4c1ff77ef209b64aae868ab87bb383f, type: 2}
+  - {fileID: 1167073891210804, guid: e99f668bab5f94a42b67f3af7190faa9, type: 2}
+  - {fileID: 1167073891210804, guid: abcecfd840c84d649856dbc02320c27c, type: 2}
+  - {fileID: 1167073891210804, guid: d316e304b13cbc34fa378662a3332428, type: 2}
+  - {fileID: 1167073891210804, guid: 832c019e86cdb0b488c48d39c4b1b1c6, type: 2}
+  - {fileID: 1167073891210804, guid: f23f6217eaba77f49abe23570e68db84, type: 2}
+  CenterPlant: {fileID: 0}
+  Camera: {fileID: 0}
+  InitialSpawnCount: 150
+  MinSpawnDistanceFromPlanet: 3
+  MaxSpawnDistanceFromPlanet: 400
