@@ -44,6 +44,8 @@ public class GameLogicComponent : MonoBehaviour
             this.points -= rb.mass;
         }
 
+        this.textPoints.text = this.points.ToString();
+
         if(this.points <= 0)
         {
             this.EndGame();
