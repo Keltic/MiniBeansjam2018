@@ -7,6 +7,9 @@ public class RocketSpawner : MonoBehaviour {
     public GameObject planet;
 	public float vel;
 	private float time = 0;
+
+	public GameObject boomAnimationPrefab;
+	
 	    // Use this for initialization
     void Start()
     {
@@ -17,11 +20,13 @@ public class RocketSpawner : MonoBehaviour {
 		this.gameObject.transform.position = new Vector2(planetPosition.x + Random.Range(-10f, 10f), planetPosition.y + Random.Range(-10f,10f));
 		vel = Random.Range (10, 50);
 		transform.RotateAround(new Vector3(0,0,1), Random.Range(0,360));
+
+
     }
 
 	void LateUpdate(){
 		time += Time.deltaTime;
-		if (time >= 5) {
+		if (time >= 6) {
 			Destroy (gameObject);
 			time = 0;
 		}
@@ -30,15 +35,17 @@ public class RocketSpawner : MonoBehaviour {
   // Update is called once per frame
     void FixedUpdate()
     {
-
 		this.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right*vel, ForceMode2D.Impulse);
-
-
 
     }
 
 	void OnCollisionEnter2D(){
-		Debug.Log("LOL");
+		
+		GameObject boom = Instantiate (boomAnimationPrefab) as GameObject;
+		boom.transform.position = this.transform.position;
+		GameLogic.Instance.ReportRocketCrashed (this.gameObject);
+		Destroy (gameObject);
+
 	
 	}
 
