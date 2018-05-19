@@ -12,10 +12,14 @@ public class MagnetComponent : MonoBehaviour {
 
     public PointEffector2D PointEffector;
     public GameObject TrashContainer;
+    public Collider2D ObjectCollider;
+
+    private Rigidbody2D myBody;
 
 	// Use this for initialization
 	void Start () {
-        IsActive = false;	
+        IsActive = false;
+        myBody = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -33,12 +37,19 @@ public class MagnetComponent : MonoBehaviour {
                 {
                     continue;
                 }
+                if (go.transform.parent != null && go.transform.parent.gameObject.layer == go.layer)
+                {
+                    go = go.transform.parent.gameObject;
+                }
+
                 if (go.GetComponent<Rigidbody2D>() == null)
                 {
                     Rigidbody2D body = go.AddComponent<Rigidbody2D>();
                     body.gravityScale = 0f;
-                    body.mass = 20f;
-                    body.AddForce(Random.insideUnitCircle * 2.0f, ForceMode2D.Impulse);
+                    body.mass = 20;
+                    Vector2 dir = (gameObject.transform.position - go.transform.position);
+                    float veloForce = myBody.velocity.magnitude;
+                    body.AddForce( dir * ((myBody.angularVelocity * 0.1f) + (veloForce * -5f)), ForceMode2D.Impulse);
                 }
                 PlayerCollider pc = go.GetComponent<PlayerCollider>();
                 if (pc != null)
@@ -55,5 +66,6 @@ public class MagnetComponent : MonoBehaviour {
             }
         }
         PointEffector.enabled = IsActive;
+        ObjectCollider.enabled = !IsActive;
     }
 }

@@ -36,8 +36,6 @@ public class TrashSpawner : MonoBehaviour {
                 float maxSpawn = minSpawn + MaxSpawnDistanceFromPlanet;
                 Vector2 spawnPos;
                 spawnPos = GetRandomPointInCircle(Vector2.zero, minSpawn, maxSpawn);
-                //spawnPos.x = minSpawn + (randomPos.x * MaxSpawnDistanceFromPlanet);
-                //spawnPos.y = minSpawn + (randomPos.y * MaxSpawnDistanceFromPlanet);
 
                 int trashIdx = Random.Range(0, TrashSpawnPresets.Length);
                 GameObject trash = Instantiate(TrashSpawnPresets[trashIdx], gameObject.transform);
