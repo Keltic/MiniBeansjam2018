@@ -1136,7 +1136,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 75
+  m_Distance: 45
   m_MaxDistanceOnly: 1
 --- !u!250 &250266005523239212
 PointEffector2D:
