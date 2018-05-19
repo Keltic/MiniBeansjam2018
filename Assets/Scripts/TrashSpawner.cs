@@ -10,16 +10,21 @@ public class TrashSpawner : MonoBehaviour {
 
     public Camera Camera;
 
+    public float SpawnTimer = 5;
+    public int SpawnStackSize = 5;
+
     public int InitialSpawnCount = 50;
 
     public float MinSpawnDistanceFromPlanet = 0.1f;
     public float MaxSpawnDistanceFromPlanet = 9f;
 
     private bool init = false;
+    private float currenTimer;
 
-	// Use this for initialization
-	void Start () {
-		
+
+    // Use this for initialization
+    void Start () {
+        currenTimer = SpawnTimer;
 	}
 	
 	// Update is called once per frame
@@ -30,21 +35,41 @@ public class TrashSpawner : MonoBehaviour {
 
             for (int i = 0; i < InitialSpawnCount; ++i)
             {
-                Vector2 randomPos = Random.insideUnitCircle;                
+                SpawnRandomTrash();
+            }
+        }
 
-                float minSpawn = Mathf.Sqrt(CenterPlant.transform.localScale.x) + MinSpawnDistanceFromPlanet;
-                float maxSpawn = minSpawn + MaxSpawnDistanceFromPlanet;
-                Vector2 spawnPos;
-                spawnPos = GetRandomPointInCircle(Vector2.zero, minSpawn, maxSpawn);
+        if (currenTimer > 0f)
+        {
+            currenTimer -= Time.deltaTime;
+        }
 
-                int trashIdx = Random.Range(0, TrashSpawnPresets.Length);
-                GameObject trash = Instantiate(TrashSpawnPresets[trashIdx], gameObject.transform);
-                trash.transform.position = new Vector3(spawnPos.x, spawnPos.y, gameObject.transform.position.z);
+        if (currenTimer <= 0f)
+        {
+            currenTimer = SpawnTimer;
 
-                trash.transform.Rotate(Vector3.forward, Random.Range(0, 360.0f));
+            for (int i = 0; i < SpawnStackSize; ++i)
+            {
+                SpawnRandomTrash();
             }
         }
 	}
+
+    void SpawnRandomTrash()
+    {
+        Vector2 randomPos = Random.insideUnitCircle;
+
+        float minSpawn = Mathf.Sqrt(CenterPlant.transform.localScale.x) + MinSpawnDistanceFromPlanet;
+        float maxSpawn = minSpawn + MaxSpawnDistanceFromPlanet;
+        Vector2 spawnPos;
+        spawnPos = GetRandomPointInCircle(Vector2.zero, minSpawn, maxSpawn);
+
+        int trashIdx = Random.Range(0, TrashSpawnPresets.Length);
+        GameObject trash = Instantiate(TrashSpawnPresets[trashIdx], gameObject.transform);
+        trash.transform.position = new Vector3(spawnPos.x, spawnPos.y, gameObject.transform.position.z);
+
+        trash.transform.Rotate(Vector3.forward, Random.Range(0, 360.0f));
+    }
 
     Vector2 GetRandomPointInCircle(Vector2 center, float minRadius, float maxRadius)
     {
