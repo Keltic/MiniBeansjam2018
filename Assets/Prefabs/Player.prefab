@@ -1367,6 +1367,6 @@ PointEffector2D:
   m_DistanceScale: 0.25
   m_ForceSource: 0
   m_ForceTarget: 0
-  m_ForceMode: 2
+  m_ForceMode: 1
   m_Drag: 25
   m_AngularDrag: 0
