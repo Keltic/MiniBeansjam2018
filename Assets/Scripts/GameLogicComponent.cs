@@ -22,11 +22,14 @@ public class GameLogicComponent : MonoBehaviour
     private GameObject gameoverTrashCollectorPlane;
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private int playerLives;
 
     private float timer;
     private float points;
     private float overallMass;
     private float tickedMass;
+    private int livesLeft;
     private Dictionary<int, int> collectedItems;
     private int crashedRockets;
     private TrashSpawner trashSpawner;
@@ -46,6 +49,7 @@ public class GameLogicComponent : MonoBehaviour
         this.collectedItems = new Dictionary<int, int>();
         this.crashedRockets = 0;
         this.overallMass = 0;
+        this.livesLeft = playerLives;
     }
 
     public void Update()
@@ -81,8 +85,9 @@ public class GameLogicComponent : MonoBehaviour
         this.textPoints.text = this.points.ToString();
 
         this.crashedRockets++;
+        this.livesLeft--;
 
-        if(this.points <= 0)
+        if(livesLeft <= 0)
         {
             this.EndGame();
         }
@@ -133,7 +138,7 @@ public class GameLogicComponent : MonoBehaviour
             while (spawned < trash.Value)
             {
                 int left = trash.Value - spawned;
-                int spawnNow = Mathf.Min(left, Random.Range(0, (left /2)+ 1 )) ;
+                int spawnNow = Mathf.Min(left, Random.Range(1, (left /2)+ 1 )) ;
                 this.trashSpawner.SpawnRandomTrashWithMassFilterAtLocation(spawnPos, trash.Key, spawnNow, processAction);
                 spawned += spawnNow;
                 
