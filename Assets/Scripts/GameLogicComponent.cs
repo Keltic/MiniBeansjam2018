@@ -138,7 +138,7 @@ public class GameLogicComponent : MonoBehaviour
             while (spawned < trash.Value)
             {
                 int left = trash.Value - spawned;
-                int spawnNow = Mathf.Min(left, Random.Range(0, (left /2)+ 1 )) ;
+                int spawnNow = Mathf.Min(left, Random.Range(1, (left /2)+ 1 )) ;
                 this.trashSpawner.SpawnRandomTrashWithMassFilterAtLocation(spawnPos, trash.Key, spawnNow, processAction);
                 spawned += spawnNow;
                 

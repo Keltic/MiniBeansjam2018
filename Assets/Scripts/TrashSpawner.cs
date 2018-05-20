@@ -77,7 +77,7 @@ public class TrashSpawner : MonoBehaviour {
             spawnPos = GetRandomPointInCircle(location, minSpawn, maxSpawn);
 
             int trashIdx = Random.Range(0, massFilteredList.Count);
-            GameObject trash = Instantiate(TrashSpawnPresets[trashIdx], gameObject.transform);
+            GameObject trash = Instantiate(massFilteredList[trashIdx], gameObject.transform);
             trash.transform.position = new Vector3(spawnPos.x, spawnPos.y, gameObject.transform.position.z);
 
             trash.transform.Rotate(Vector3.forward, Random.Range(0, 360.0f));
