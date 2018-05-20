@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Trash
+  - TrashContainer
+  - TrashAttachmentContainer
+  - Stations
+  - SpaceStation
   layers:
   - Default
   - TransparentFX
@@ -21,7 +25,7 @@ TagManager:
   - Rocket
   - PlayerShip
   - Planet
-  - 
+  - SpaceStation
   - 
   - 
   - 

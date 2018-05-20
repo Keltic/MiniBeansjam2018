@@ -265,6 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4735801448072408}
   - component: {fileID: 70883352378144050}
+  - component: {fileID: 114872156838410926}
   m_Layer: 13
   m_Name: PlanetCollider
   m_TagString: Untagged
@@ -690,7 +691,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9d86b031f10aa3042bc5e170c9593d40, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.568
+  m_Volume: 1
   m_Pitch: 0.8
   Loop: 1
   Mute: 0
@@ -876,7 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerGameObject: {fileID: 1698623840819390}
-  TrashContainer: {fileID: 0}
+  AttachedTrashContainer: {fileID: 0}
 --- !u!114 &114547881874384754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -915,6 +916,18 @@ MonoBehaviour:
   ObjectCollider: {fileID: 70234281555809620}
   MagnetEffect: {fileID: 1303834961688764}
   SoundEffect: {fileID: 82504830211409372}
+--- !u!114 &114872156838410926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1775512530695826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f5e666f6bec6d84ea1b8437cbc1c15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BounceForce: 1000
 --- !u!212 &212107674910739788
 SpriteRenderer:
   m_ObjectHideFlags: 1
