@@ -8,7 +8,7 @@ public class RocketController : MonoBehaviour {
 
 	private float time;
 	private float alertTime;
-	private float alertTimer;
+	public float alertTimeFactor = 0.5f;
 	public GameObject rocketPrefab;
 	private GameObject rocket;
 	public GameObject rocketAlarmPrefab;
@@ -50,7 +50,7 @@ public class RocketController : MonoBehaviour {
 			rocket = Instantiate (rocketPrefab, rocketSpawn, rot) as GameObject;
 			time = 0;
 			spawnTimer = Random.Range (20, 35);
-			alertTime = (spawnTimer*0.2f);
+			alertTime = (spawnTimer*alertTimeFactor);
 			flag = true;
 
 
