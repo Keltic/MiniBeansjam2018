@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,15 +16,48 @@ public class ShipSelector : MonoBehaviour {
 	private int colorIndex;
 	private int typeIndex;
 
-	void Start(){
+	void Start()
+    {
+        if (!PlayerPrefs.HasKey("PlayerShipColorIndex"))
+        {
+            PlayerPrefs.SetInt("PlayerShipColorIndex", 0);
+        }
 
-		colorIndex = 0;
-		typeIndex = 0;
-		currentType = shipType1;
-		shipRenderer.sprite = currentType [typeIndex];
-	}
+        if (!PlayerPrefs.HasKey("PlayerShipTypeIndex"))
+        {
+            PlayerPrefs.SetInt("PlayerShipTypeIndex", 0);
+        }
+    }
 
+    public void Show()
+    {
+        this.typeIndex = 0;
+        this.colorIndex = 0;
+        currentType = shipType1;
+        shipRenderer.sprite = currentType[this.colorIndex];
 
+        this.gameObject.SetActive(true);
+        this.colorIndex = PlayerPrefs.GetInt("PlayerShipColorIndex");
+
+        int savedTypeIndex = PlayerPrefs.GetInt("PlayerShipTypeIndex");
+
+        for(int i = 0; i < savedTypeIndex; i++)
+        {
+            this.changeType(true);
+        }
+    }
+
+    public void Hide()
+    {
+        this.gameObject.SetActive(false);
+    }
+
+    public void OnClickButtonBack()
+    {
+        PlayerPrefs.SetInt("PlayerShipColorIndex", this.colorIndex);
+        PlayerPrefs.SetInt("PlayerShipTypeIndex", this.typeIndex);
+        GameObject.Find("Canvas_MainMenu").GetComponent<MainMenuGuiComponent>().OnClickButtonBackToMainMenu();
+    }
 
 	public void changeColor(bool dir){
 		if (dir) {			
@@ -47,7 +80,7 @@ public class ShipSelector : MonoBehaviour {
 			}
 		} else if(dir == false){
 			typeIndex--;
-			if (typeIndex <= 0)
+			if (typeIndex < 0)
 				typeIndex = 2;
 		}
 

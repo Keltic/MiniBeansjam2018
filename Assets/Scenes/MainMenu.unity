@@ -215,11 +215,6 @@ Prefab:
       propertyPath: audiocSourceBgm
       value: 
       objectReference: {fileID: 2000327926}
-    - target: {fileID: 224708797531885926, guid: 270e92ae50afe9d42946b12951d37ce3,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 3300
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 270e92ae50afe9d42946b12951d37ce3, type: 2}
   m_IsPrefabParent: 0

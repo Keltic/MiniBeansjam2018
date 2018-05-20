@@ -11,6 +11,8 @@ public class MainMenuGuiComponent : MonoBehaviour
     private WindowHowToPlayComponent howToPlay;
     [SerializeField]
     private GameObject credits;
+    [SerializeField]
+    private ShipSelector shipSelector;
 
     [SerializeField]
     private AudioSource audiocSourceBgm;
@@ -40,6 +42,12 @@ public class MainMenuGuiComponent : MonoBehaviour
         this.credits.SetActive(true);
     }
 
+    public void OnClickButtonShipSelector()
+    {
+        this.mainMenu.SetActive(false);
+        this.shipSelector.Show();
+    }
+
     public void OnClickButtonQuit()
     {
         Application.Quit();
@@ -50,5 +58,6 @@ public class MainMenuGuiComponent : MonoBehaviour
         this.mainMenu.SetActive(true);
         this.howToPlay.Hide();
         this.credits.SetActive(false);
+        this.shipSelector.Hide();
     }
 }
