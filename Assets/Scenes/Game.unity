@@ -213,11 +213,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e360aba63bba64c4aac1123fc31cb149, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &86925393 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4303737169850970, guid: dc48873da2126694b8b47514b418b626,
-    type: 2}
-  m_PrefabInternal: {fileID: 361784076}
 --- !u!1001 &361784076
 Prefab:
   m_ObjectHideFlags: 0
@@ -294,54 +289,14 @@ Prefab:
       propertyPath: TrashContainer
       value: 
       objectReference: {fileID: 1896754855}
-    m_RemovedComponents:
-    - {fileID: 70002162251184052, guid: dc48873da2126694b8b47514b418b626, type: 2}
+    - target: {fileID: 250266005523239212, guid: dc48873da2126694b8b47514b418b626,
+        type: 2}
+      propertyPath: m_DistanceScale
+      value: 0.01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc48873da2126694b8b47514b418b626, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &929207211
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 929207212}
-  - component: {fileID: 929207213}
-  m_Layer: 13
-  m_Name: PlanetCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &929207212
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 929207211}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 86925393}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &929207213
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 929207211}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.8, y: 1.2}
-  m_Direction: 0
 --- !u!1001 &945101308
 Prefab:
   m_ObjectHideFlags: 0
