@@ -7,6 +7,10 @@ using UnityEngine.UI;
 public class GameLogicComponent : MonoBehaviour
 {
     [SerializeField]
+    private GameObject[] shipPrefabs;
+    [SerializeField]
+    private Sprite[] shipSprites;
+    [SerializeField]
     private int numberOfSpawnAtCrash = 5;
     [SerializeField]
     private Text textPoints;
@@ -38,6 +42,17 @@ public class GameLogicComponent : MonoBehaviour
 
     public void Start()
     {
+        int typeIndex = PlayerPrefs.GetInt("PlayerShipTypeIndex");
+        int colorIndex = PlayerPrefs.GetInt("PlayerShipColorIndex");
+        GameObject player = GameObject.Instantiate(this.shipPrefabs[typeIndex]);
+
+        SpriteRenderer sr = player.transform.Find("Sprite").GetComponent<SpriteRenderer>();
+        int spriteIndex = typeIndex * 4 + colorIndex;
+        sr.sprite = this.shipSprites[spriteIndex];
+
+        GameObject.Find("Main Camera").GetComponent<CameraFollowPlayer>().SetPlayer(player.transform);
+        GameObject.Find("AttachTrashContainer").GetComponent<SetToPlayerPositionAndRotation>().Player = player;
+
         this.trashSpawner = GameObject.Find("TrashContainer").GetComponent<TrashSpawner>();
         this.trashAttachContainer = GameObject.FindGameObjectWithTag("TrashAttachmentContainer");
         this.trashContainer = GameObject.FindGameObjectWithTag("TrashContainer");
