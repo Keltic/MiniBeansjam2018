@@ -47,7 +47,7 @@ public class GameLogicComponent : MonoBehaviour
     {
         int typeIndex = PlayerPrefs.GetInt("PlayerShipTypeIndex");
         int colorIndex = PlayerPrefs.GetInt("PlayerShipColorIndex");
-        GameObject player = GameObject.Instantiate(this.shipPrefabs[typeIndex]);
+        player = GameObject.Instantiate(this.shipPrefabs[typeIndex]);
 
         SpriteRenderer sr = player.transform.Find("Sprite").GetComponent<SpriteRenderer>();
         int spriteIndex = typeIndex * 4 + colorIndex;
