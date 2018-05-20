@@ -277,6 +277,38 @@ Prefab:
       propertyPath: audiocSourceBgm
       value: 
       objectReference: {fileID: 2000327926}
+    - target: {fileID: 114762260280047898, guid: 270e92ae50afe9d42946b12951d37ce3,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 13fbf767a2c208f4383e8114af716c17,
+        type: 3}
+    - target: {fileID: 114762260280047898, guid: 270e92ae50afe9d42946b12951d37ce3,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114762260280047898, guid: 270e92ae50afe9d42946b12951d37ce3,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114011318690143548, guid: 270e92ae50afe9d42946b12951d37ce3,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 13fbf767a2c208f4383e8114af716c17,
+        type: 3}
+    - target: {fileID: 114011318690143548, guid: 270e92ae50afe9d42946b12951d37ce3,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114011318690143548, guid: 270e92ae50afe9d42946b12951d37ce3,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 270e92ae50afe9d42946b12951d37ce3, type: 2}
   m_IsPrefabParent: 0
