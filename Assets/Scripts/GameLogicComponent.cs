@@ -14,9 +14,16 @@ public class GameLogicComponent : MonoBehaviour
     private GameObject gameOverScreen;
     [SerializeField]
     private Text textTime;
+    [SerializeField]
+    private Text textMass;
+    [SerializeField]
+    private AudioSource gameoverSound;
 
     private float timer;
     private float points;
+    private float overallMass;
+    private Dictionary<int, int> collectedItems;
+    private int crashedRockets;
     private TrashSpawner trashSpawner;
 
     public void Start()
@@ -27,6 +34,9 @@ public class GameLogicComponent : MonoBehaviour
         this.gameOverScreen.SetActive(false);
         this.points = 2000;
         this.textPoints.text = this.points.ToString();
+        this.collectedItems = new Dictionary<int, int>();
+        this.crashedRockets = 0;
+        this.overallMass = 0;
     }
 
     public void Update()
@@ -38,6 +48,15 @@ public class GameLogicComponent : MonoBehaviour
     {
         this.points += amount;
         this.textPoints.text = this.points.ToString();
+
+        int intAmount = (int)amount;
+        if (!this.collectedItems.ContainsKey(intAmount))
+        {
+            this.collectedItems.Add(intAmount, 0);
+        }
+
+        this.collectedItems[intAmount]++;
+        overallMass += amount;
     }
 
     public void ReportRocketCrashed(GameObject rocket)
@@ -52,6 +71,8 @@ public class GameLogicComponent : MonoBehaviour
 
         this.textPoints.text = this.points.ToString();
 
+        this.crashedRockets++;
+
         if(this.points <= 0)
         {
             this.EndGame();
@@ -65,11 +86,18 @@ public class GameLogicComponent : MonoBehaviour
 
     public void EndGame()
     {
+        if (gameoverSound)
+        {
+            gameoverSound.Play();
+        }
+
         Time.timeScale = 0;
         this.gameOverScreen.SetActive(true);
 
         System.TimeSpan span = System.TimeSpan.FromSeconds(this.timer);
         string text = string.Format("{0}:{1}:{2}", span.Hours.ToString("D2"), span.Minutes.ToString("D2"), span.Seconds.ToString("D2"));
         this.textTime.text = text;
+        string massText = string.Format("{0} tons of trash", overallMass);
+        this.textMass.text = massText;
     }
 }
