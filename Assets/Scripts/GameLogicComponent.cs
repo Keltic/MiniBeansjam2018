@@ -87,7 +87,7 @@ public class GameLogicComponent : MonoBehaviour
         this.crashedRockets++;
         this.livesLeft--;
 
-        if(this.livesLeft <= 0)
+        if(livesLeft <= 0)
         {
             this.EndGame();
         }
