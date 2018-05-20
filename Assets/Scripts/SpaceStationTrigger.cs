@@ -6,14 +6,22 @@ public class SpaceStationTrigger : MonoBehaviour
 {
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 10) //10 = AttachedToPlayer
+        Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+
+        //9 = SpaceTrash, 10 = AttachedToPlayer
+        if (
+            rb != null &&
+             (
+              collision.gameObject.layer == 10 ||
+              (
+               collision.gameObject.layer == 9 &&
+               rb.velocity != Vector2.zero
+              )
+             )
+            )
         {
-            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-            if(rb != null)
-            {
-                GameLogic.Instance.ReportScrapDelivered(rb.mass);
-                GameObject.Destroy(collision.gameObject);
-            }
+            GameLogic.Instance.ReportScrapDelivered(rb.mass);
+            GameObject.Destroy(collision.gameObject);
         }
     }
 }
