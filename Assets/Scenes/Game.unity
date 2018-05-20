@@ -307,6 +307,11 @@ Prefab:
       propertyPath: m_Layer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114502250583565950, guid: ff946f4eec598a04c80cc6b3d7aef440,
+        type: 2}
+      propertyPath: audioSourceDelivery
+      value: 
+      objectReference: {fileID: 1605173154}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff946f4eec598a04c80cc6b3d7aef440, type: 2}
   m_IsPrefabParent: 0
@@ -484,6 +489,11 @@ Prefab:
       propertyPath: m_Layer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114502250583565950, guid: ff946f4eec598a04c80cc6b3d7aef440,
+        type: 2}
+      propertyPath: audioSourceDelivery
+      value: 
+      objectReference: {fileID: 1605173154}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff946f4eec598a04c80cc6b3d7aef440, type: 2}
   m_IsPrefabParent: 0
@@ -623,6 +633,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2043330837}
+--- !u!82 &1605173154 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82430513629968022, guid: e360aba63bba64c4aac1123fc31cb149,
+    type: 2}
+  m_PrefabInternal: {fileID: 36810690}
 --- !u!1001 &1681106454
 Prefab:
   m_ObjectHideFlags: 0
