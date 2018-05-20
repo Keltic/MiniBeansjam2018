@@ -220,10 +220,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 2043330831}
-    - target: {fileID: 82410596580846132, guid: e360aba63bba64c4aac1123fc31cb149,
+    - target: {fileID: 114390214677345268, guid: e360aba63bba64c4aac1123fc31cb149,
         type: 2}
-      propertyPath: m_Volume
-      value: 1
+      propertyPath: alertTimeFactor
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e360aba63bba64c4aac1123fc31cb149, type: 2}

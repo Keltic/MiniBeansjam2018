@@ -75,7 +75,7 @@ MonoBehaviour:
   CenterPlant: {fileID: 0}
   Camera: {fileID: 0}
   SpawnTimer: 5
-  SpawnStackSize: 3
+  SpawnStackSize: 4
   InitialSpawnCount: 25
   MinSpawnDistanceFromPlanet: 300
   MaxSpawnDistanceFromPlanet: 1000

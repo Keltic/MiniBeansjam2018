@@ -1012,8 +1012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51585e92295d3e34a87aa32475d95008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTimer: 5
-  alertTimeFactor: 0.5
+  spawnTimer: 20
+  alertTimeFactor: 0.2
   rocketPrefab: {fileID: 1368841161644592, guid: 20f8cbfd4e12a174caea8d2e21f4d0b7,
     type: 2}
   rocketAlarmPrefab: {fileID: 1672926517471464, guid: ac3a6e8928c5efd46bb12b23f18ef36e,

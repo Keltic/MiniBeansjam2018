@@ -93,6 +93,6 @@ public class MovementComponent : MonoBehaviour {
         }
 
 
-        myBody.angularVelocity = Mathf.Clamp(myBody.angularVelocity, -50f, 50f);
+        myBody.angularVelocity = Mathf.Clamp(myBody.angularVelocity, -50f, 100f);
     }
 }
