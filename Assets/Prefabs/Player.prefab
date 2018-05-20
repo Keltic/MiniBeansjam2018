@@ -643,8 +643,7 @@ AudioSource:
   m_GameObject: {fileID: 1468940042350650}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 4686c2e65a4e25d419aa961885b252a1,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9d86b031f10aa3042bc5e170c9593d40, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.568
@@ -739,8 +738,7 @@ AudioSource:
   m_GameObject: {fileID: 1112395942005884}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 4686c2e65a4e25d419aa961885b252a1,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9d86b031f10aa3042bc5e170c9593d40, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.568
@@ -946,9 +944,9 @@ MonoBehaviour:
   thrusterRight: {fileID: 1964892512630700}
   thrusterFront: {fileID: 1084787028520060}
   rb: {fileID: 50628584148200360}
-  accelerationForce: 450
-  torqueForce: 200
-  trashMassFactor: 0.0005
+  accelerationForce: 600
+  torqueForce: 300
+  trashMassFactor: 0.00025
   TrashContainer: {fileID: 0}
 --- !u!114 &114790342052656866
 MonoBehaviour:
@@ -1402,11 +1400,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 512
-  m_ForceMagnitude: -450
-  m_ForceVariation: 1
-  m_DistanceScale: 1
+  m_ForceMagnitude: -1200
+  m_ForceVariation: 125
+  m_DistanceScale: 0.25
   m_ForceSource: 0
-  m_ForceTarget: 1
+  m_ForceTarget: 0
   m_ForceMode: 0
   m_Drag: 25
   m_AngularDrag: 0
