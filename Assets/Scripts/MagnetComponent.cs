@@ -68,7 +68,7 @@ public class MagnetComponent : MonoBehaviour {
                     body.mass = 20;
                     Vector2 dir = (gameObject.transform.position - go.transform.position);
                     float veloForce = myBody.velocity.magnitude;
-                    body.AddForce( dir * ((myBody.angularVelocity * 0.1f) + (veloForce * -5f)), ForceMode2D.Impulse);
+                    body.AddForce( dir * ((myBody.angularVelocity * 0.1f) + (veloForce * -3f)), ForceMode2D.Impulse);
                 }
                 PlayerCollider pc = go.GetComponent<PlayerCollider>();
                 if (pc != null)

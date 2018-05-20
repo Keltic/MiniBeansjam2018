@@ -894,8 +894,8 @@ MonoBehaviour:
   thrusterRight: {fileID: 1964892512630700}
   thrusterFront: {fileID: 1084787028520060}
   rb: {fileID: 50628584148200360}
-  accelerationForce: 600
-  torqueForce: 300
+  accelerationForce: 1000
+  torqueForce: 1000
   trashMassFactor: 0.00025
   AttachTrashContainer: {fileID: 0}
 --- !u!114 &114790342052656866

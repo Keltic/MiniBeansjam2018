@@ -55,6 +55,36 @@ public class TrashSpawner : MonoBehaviour {
         }
 	}
 
+    public void SpawnRandomTrashWithMassFilterAtLocation(Vector2 location, float targetMass, int number, System.Action<GameObject> action)
+    {
+        Vector2 randomPos = Random.insideUnitCircle;
+
+        float minSpawn = Mathf.Sqrt(CenterPlant.transform.localScale.x) + 5;
+        float maxSpawn = minSpawn + 20;
+        List<GameObject> massFilteredList = new List<GameObject>();
+
+        for (int i = 0; i < TrashSpawnPresets.Length; ++i)
+        {
+            if (TrashSpawnPresets[i].GetComponent<Rigidbody2D>().mass == targetMass)
+            {
+                massFilteredList.Add(TrashSpawnPresets[i]);
+            }
+        }
+
+        for (int i = 0; i < number; ++i)
+        {
+            Vector2 spawnPos;
+            spawnPos = GetRandomPointInCircle(location, minSpawn, maxSpawn);
+
+            int trashIdx = Random.Range(0, massFilteredList.Count);
+            GameObject trash = Instantiate(TrashSpawnPresets[trashIdx], gameObject.transform);
+            trash.transform.position = new Vector3(spawnPos.x, spawnPos.y, gameObject.transform.position.z);
+
+            trash.transform.Rotate(Vector3.forward, Random.Range(0, 360.0f));
+            action(trash);
+        }
+    }
+
     public void SpawnRandomTrashAtLocation(Vector2 location, int numTrash = -1)
     {
         int stackSize = numTrash == -1 ? SpawnStackSize : numTrash;
