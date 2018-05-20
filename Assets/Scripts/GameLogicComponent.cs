@@ -141,10 +141,14 @@ public class GameLogicComponent : MonoBehaviour
 
         System.Action<GameObject> processAction = ProcessEndGameTrash;
         Dictionary<int, int> collectedItemsCopy = new Dictionary<int, int>();
+
+        int overallMax = 1000;
+        int maxPerCat = overallMax / collectedItems.Keys.Count;
+        
         foreach (KeyValuePair<int, int> trash in collectedItems)
         {
             // more == better
-            collectedItemsCopy.Add(trash.Key, trash.Value * 5);
+            collectedItemsCopy.Add(trash.Key, Mathf.Min( (trash.Value < 5 ? trash.Value * 5 : trash.Value), maxPerCat));
         }
         
         foreach (KeyValuePair<int, int> trash in collectedItemsCopy)
