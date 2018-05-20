@@ -28,6 +28,8 @@ public class GameLogicComponent : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private int playerLives;
+    [SerializeField]
+    private LifesLeftComponent LivesLeftComponent;
 
     private float timer;
     private float points;
@@ -39,6 +41,7 @@ public class GameLogicComponent : MonoBehaviour
     private TrashSpawner trashSpawner;
     private GameObject trashContainer;
     private GameObject trashAttachContainer;
+    
 
     public void Start()
     {
@@ -65,6 +68,7 @@ public class GameLogicComponent : MonoBehaviour
         this.crashedRockets = 0;
         this.overallMass = 0;
         this.livesLeft = playerLives;
+        LivesLeftComponent.SetValues(livesLeft);
     }
 
     public void Update()
@@ -101,8 +105,9 @@ public class GameLogicComponent : MonoBehaviour
 
         this.crashedRockets++;
         this.livesLeft--;
+        LivesLeftComponent.SetValues(livesLeft);
 
-        if(livesLeft <= 0)
+        if (livesLeft <= 0)
         {
             this.EndGame();
         }

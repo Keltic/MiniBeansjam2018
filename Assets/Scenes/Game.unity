@@ -215,15 +215,10 @@ Prefab:
       propertyPath: gameoverTrashCollectorPlane
       value: 
       objectReference: {fileID: 2057834940}
-    - target: {fileID: 224823694859533538, guid: e360aba63bba64c4aac1123fc31cb149,
+    - target: {fileID: 114686710069723872, guid: e360aba63bba64c4aac1123fc31cb149,
         type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 900
-      objectReference: {fileID: 0}
-    - target: {fileID: 224823694859533538, guid: e360aba63bba64c4aac1123fc31cb149,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
+      propertyPath: playerLives
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e360aba63bba64c4aac1123fc31cb149, type: 2}

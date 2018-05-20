@@ -2031,7 +2031,8 @@ MonoBehaviour:
   gameoverSound: {fileID: 82520084802469400}
   gameoverTrashCollectorPlane: {fileID: 0}
   player: {fileID: 0}
-  playerLives: 10
+  playerLives: 7
+  LivesLeftComponent: {fileID: 114857982228006430}
 --- !u!114 &114753238404884824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2092,8 +2093,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f58165235ba5d742934c393b5088c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spritesRockets: []
-  spritesExplosions: []
+  spritesRockets:
+  - {fileID: 114111637695397438}
+  - {fileID: 114217844029532076}
+  - {fileID: 114915957785434750}
+  - {fileID: 114349000386038600}
+  - {fileID: 114127201456402836}
+  - {fileID: 114917161032846288}
+  - {fileID: 114370217884907792}
+  spritesExplosions:
+  - {fileID: 114082066046393446}
+  - {fileID: 114370154981401792}
+  - {fileID: 114163400911882096}
+  - {fileID: 114084143015123706}
+  - {fileID: 114623188368887812}
+  - {fileID: 114651643468183400}
+  - {fileID: 114255015147145828}
 --- !u!114 &114915957785434750
 MonoBehaviour:
   m_ObjectHideFlags: 1
