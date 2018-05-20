@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MovementComponent : MonoBehaviour {
 
+    const string AttachTrashContainerTag = "TrashAttachmentContainer";
+
     [SerializeField]
     private GameObject thrusterBack;
     [SerializeField]
@@ -23,17 +25,18 @@ public class MovementComponent : MonoBehaviour {
 
     private Rigidbody2D myBody;
     private MagnetComponent magnet;
-    public GameObject TrashContainer;
+    public GameObject AttachTrashContainer;
 
     void Start()
     {
         myBody = GetComponent<Rigidbody2D>();
         magnet = GetComponent<MagnetComponent>();
+        AttachTrashContainer = GameObject.FindGameObjectWithTag(AttachTrashContainerTag);
     }
 
     public void FixedUpdate()
     {
-        Transform containerTransform = TrashContainer.transform;
+        Transform containerTransform = AttachTrashContainer.transform;
         int numChilds = containerTransform.childCount;
         float overallMass = 0f;
         for (int ci = 0; ci < containerTransform.childCount; ++ci)

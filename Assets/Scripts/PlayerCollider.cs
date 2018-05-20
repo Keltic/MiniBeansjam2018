@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerCollider : MonoBehaviour {
 
+    const string AttachTrashContainerTag = "TrashAttachmentContainer";
     public GameObject PlayerGameObject;
-    public GameObject TrashContainer;
+    public GameObject AttachedTrashContainer;
 
     const int SpaceTrashLayer = 9;
     const int AttachToPlayerLayer = 10;
@@ -13,6 +14,10 @@ public class PlayerCollider : MonoBehaviour {
     private Collider2D myCollider;
     private PointEffector2D playerPointEffector;
 
+    private void Start()
+    {
+        AttachedTrashContainer = GameObject.FindGameObjectWithTag(AttachTrashContainerTag);
+    }
     void OnTriggerEnter2D(Collider2D other)
     {        
         if (!myCollider)
@@ -33,7 +38,7 @@ public class PlayerCollider : MonoBehaviour {
         if (other.isTrigger && other.gameObject.layer == SpaceTrashLayer && !myCollider.usedByEffector)
         {         
             other.gameObject.layer = AttachToPlayerLayer;
-            other.gameObject.transform.SetParent(TrashContainer.transform);
+            other.gameObject.transform.SetParent(AttachedTrashContainer.transform);
 
             Rigidbody2D body = other.gameObject.GetComponent<Rigidbody2D>();
             body.Sleep();
@@ -43,7 +48,7 @@ public class PlayerCollider : MonoBehaviour {
 
             PlayerCollider pc = other.gameObject.AddComponent<PlayerCollider>();
             pc.PlayerGameObject = PlayerGameObject;
-            pc.TrashContainer = TrashContainer;
+            pc.AttachedTrashContainer = AttachedTrashContainer;
         }        
     }
 }

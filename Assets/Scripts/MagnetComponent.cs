@@ -6,6 +6,8 @@ public class MagnetComponent : MonoBehaviour {
 
     const string MagnetActionName = "Magnet";
     const string TrashTag = "Trash";
+    const string AttachTrashContainerTag = "TrashAttachmentContainer";
+    const string TrashContainerTag = "TrashContainer";
     const int SpaceTrashLayer = 9;
 
     public bool IsMagnetActive = false;
@@ -25,6 +27,8 @@ public class MagnetComponent : MonoBehaviour {
         IsMagnetActive = false;
         myBody = GetComponent<Rigidbody2D>();
         SoundEffect.Stop();
+        AttachedTrashContainer = GameObject.FindGameObjectWithTag(AttachTrashContainerTag);
+        TrashContainer = GameObject.FindGameObjectWithTag(TrashContainerTag);
     }
 	
 	// Update is called once per frame
