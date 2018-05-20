@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RocketController : MonoBehaviour {
 
-	public float spawnTimer = 5;
+	public float spawnTimer = 20;
 
 	private float time;
 	private float alertTime;
@@ -21,6 +21,7 @@ public class RocketController : MonoBehaviour {
 	private bool flag = true;
 	// Use this for initialization
 	void Start () {
+		alertTime = (spawnTimer*alertTimeFactor);
 
 
 	}
