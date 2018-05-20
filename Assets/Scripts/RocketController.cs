@@ -5,35 +5,43 @@ using UnityEngine;
 public class RocketController : MonoBehaviour {
 
 	public float spawnTimer = 5;
-	public float alertTimer = 5;
+
 	private float time;
 	private float alertTime;
+	private float alertTimer;
 	public GameObject rocketPrefab;
 	private GameObject rocket;
 	public GameObject rocketAlarmPrefab;
 	private GameObject rocketAlarm;
-	public GameObject planet;
 
-	private Vector3 rocketSpawn;
-	private Vector2 planetPosition;
+	private Vector2 rocketSpawn;
 	private Quaternion rot;
+
+	private bool rocketReady = false;
+	private bool flag = true;
 	// Use this for initialization
 	void Start () {
-		planetPosition = new Vector2();
-		planetPosition = planet.transform.position;
 
-		
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-		alertTime += Time.deltaTime;
+
+
+		alertTime -= Time.deltaTime;
 		time += Time.deltaTime;
-		if (alertTime  == spawnTimer/3) {
+
+		if (alertTime <= 0 && flag == true) {
+			rocketReady = true;
+			flag = false;
+		}
+
+		if (rocketReady) {
 
 			calcRocketPosition ();
-			rocketAlarm = Instantiate (rocketAlarmPrefab, rocketSpawn, Quaternion.identity) as GameObject;
+			rocketAlarm = Instantiate (rocketAlarmPrefab, rocketSpawn, rot) as GameObject;
+			rocketReady = false;
 
 			}
 
@@ -41,7 +49,11 @@ public class RocketController : MonoBehaviour {
 			Destroy (rocketAlarm);
 			rocket = Instantiate (rocketPrefab, rocketSpawn, rot) as GameObject;
 			time = 0;
-			spawnTimer = Random.Range (8, 15);
+			spawnTimer = Random.Range (20, 35);
+			alertTime = (spawnTimer*0.2f);
+			flag = true;
+
+
 
 
 		}
@@ -51,8 +63,8 @@ public class RocketController : MonoBehaviour {
 
 
 	private void calcRocketPosition(){
-		rocketSpawn = new Vector3(planetPosition.x + Random.Range(-10f, 10f), planetPosition.y + Random.Range(-10f,10f),0);
-		rot = Quaternion.Euler (0, 0, Random.Range (0, 360));
+		rocketSpawn = new Vector3(Random.Range(-10f, 10f),Random.Range(-10f,10f));
+		rot = Quaternion.Euler(new Vector3(0,0,Random.Range(0,360)));
 
 	}
 

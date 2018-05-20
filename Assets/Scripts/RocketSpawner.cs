@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RocketSpawner : MonoBehaviour {
 
-    public GameObject planet;
+ 
 	public float vel;
 	private float time = 0;
 
