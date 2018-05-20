@@ -210,11 +210,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114390214677345268, guid: e360aba63bba64c4aac1123fc31cb149,
-        type: 2}
-      propertyPath: planet
-      value: 
-      objectReference: {fileID: 1040120543}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e360aba63bba64c4aac1123fc31cb149, type: 2}
   m_IsPrefabParent: 0
@@ -257,16 +252,23 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114214851017174232, guid: dc48873da2126694b8b47514b418b626,
+    - target: {fileID: 82356361981871914, guid: dc48873da2126694b8b47514b418b626,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 4686c2e65a4e25d419aa961885b252a1,
+        type: 2}
+    - target: {fileID: 82504830211409372, guid: dc48873da2126694b8b47514b418b626,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 4686c2e65a4e25d419aa961885b252a1,
+        type: 2}
+    - target: {fileID: 114547881874384754, guid: dc48873da2126694b8b47514b418b626,
         type: 2}
       propertyPath: TrashContainer
       value: 
       objectReference: {fileID: 1896754855}
-    - target: {fileID: 232392941566835052, guid: dc48873da2126694b8b47514b418b626,
-        type: 2}
-      propertyPath: m_ConnectedRigidBody
-      value: 
-      objectReference: {fileID: 1040120549}
     - target: {fileID: 114790342052656866, guid: dc48873da2126694b8b47514b418b626,
         type: 2}
       propertyPath: TrashContainer
@@ -277,26 +279,16 @@ Prefab:
       propertyPath: AttachedTrashContainer
       value: 
       objectReference: {fileID: 1896754855}
-    - target: {fileID: 114547881874384754, guid: dc48873da2126694b8b47514b418b626,
+    - target: {fileID: 232392941566835052, guid: dc48873da2126694b8b47514b418b626,
+        type: 2}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 1040120549}
+    - target: {fileID: 114214851017174232, guid: dc48873da2126694b8b47514b418b626,
         type: 2}
       propertyPath: TrashContainer
       value: 
       objectReference: {fileID: 1896754855}
-    - target: {fileID: 114547881874384754, guid: dc48873da2126694b8b47514b418b626,
-        type: 2}
-      propertyPath: accelerationForce
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 114547881874384754, guid: dc48873da2126694b8b47514b418b626,
-        type: 2}
-      propertyPath: torqueForce
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 114547881874384754, guid: dc48873da2126694b8b47514b418b626,
-        type: 2}
-      propertyPath: trashMassFactor
-      value: 0.00025
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc48873da2126694b8b47514b418b626, type: 2}
   m_IsPrefabParent: 0
